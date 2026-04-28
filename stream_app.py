@@ -205,13 +205,6 @@ with col_res:
             st.error("### ❌ HASIL: MACET")
             st.write("Peringatan: risiko gagal bayar terdeteksi tinggi.")
 
-        if hasattr(model, "predict_proba"):
-            proba = model.predict_proba(X)[0]
-            confidence = float(proba.max())
-            st.divider()
-            st.metric("Tingkat Keyakinan Model", f"{confidence*100:.2f}%")
-            st.progress(confidence)
-
         st.markdown("</div>", unsafe_allow_html=True)
 
 st.caption("© 2026 Prediksi Pola Nasabah")
